@@ -1,0 +1,280 @@
+/* --- RESET E FONTES --- */
+:root {
+  --primary: #22c55e; /* Verde Zap */
+  --primary-glow: #22c55e80;
+  --dark-bg: #020617; /* Fundo Quase Preto */
+  --card-bg: rgba(30, 41, 59, 0.7); /* Efeito Vidro */
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--dark-bg);
+  color: var(--text-main);
+  /* Fundo com um brilho sutil no topo */
+  background-image: radial-gradient(circle at 50% 0%, #1e293b 0%, #020617 60%);
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* --- HEADER & NAV --- */
+header {
+  padding: 30px 0;
+}
+.logo {
+  color: var(--primary);
+  font-weight: 800;
+  font-size: 1.8rem;
+  letter-spacing: -1px;
+  text-shadow: 0 0 20px var(--primary-glow); /* Neon no Logo */
+}
+
+/* --- HERO SECTION (A Primeira Impressão) --- */
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 100px 0;
+  gap: 50px;
+}
+
+h1 {
+  font-size: 3.5rem;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  background: linear-gradient(to right, #fff, #94a3b8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; /* Texto Gradiente */
+}
+
+p {
+  color: var(--text-muted);
+  font-size: 1.2rem;
+  margin-bottom: 35px;
+  line-height: 1.6;
+  max-width: 500px;
+}
+
+.btn-cta {
+  background-color: var(--primary);
+  color: #000;
+  padding: 18px 40px;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 50px; /* Botão Redondo moderno */
+  font-size: 1.1rem;
+  transition: 0.3s;
+  display: inline-block;
+  box-shadow: 0 0 20px var(--primary-glow); /* Botão Brilhante */
+}
+.btn-cta:hover {
+  background-color: #4ade80;
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 0 40px var(--primary-glow);
+}
+
+/* --- CHAT ANIMADO (O Charme do Site) --- */
+.chat-mockup {
+  background: rgba(30, 41, 59, 0.4);
+  backdrop-filter: blur(10px); /* Desfoque de vidro */
+  padding: 25px;
+  border-radius: 24px;
+  width: 380px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  animation: float 6s ease-in-out infinite; /* Flutuando */
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.msg {
+  padding: 12px 18px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+  opacity: 0;
+  animation: popIn 0.5s forwards; /* Animação de entrada */
+}
+.user {
+  background-color: #005c4b;
+  align-self: flex-end;
+  margin-left: auto;
+  width: fit-content;
+  border-bottom-right-radius: 2px;
+  animation-delay: 0.5s;
+}
+.bot {
+  background-color: #202c33;
+  width: fit-content;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-top-left-radius: 2px;
+  animation-delay: 1.5s;
+}
+
+/* Animação das mensagens aparecendo */
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- FEATURES (Cards de Vidro) --- */
+.features {
+  padding: 50px 0;
+}
+.features .container {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.card {
+  flex: 1;
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  padding: 40px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: 0.3s;
+}
+.card:hover {
+  transform: translateY(-10px);
+  border-color: var(--primary);
+}
+.card h3 {
+  color: var(--primary);
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+}
+
+/* --- CHECKOUT FORM (Moderno) --- */
+.checkout-section {
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Luz de fundo decorativa atrás do form */
+.checkout-section::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, var(--primary-glow) 0%, transparent 70%);
+  opacity: 0.2;
+  z-index: 0;
+}
+
+.form-wrapper {
+  position: relative;
+  z-index: 1;
+  max-width: 480px;
+  margin: 0 auto;
+  background: rgba(15, 23, 42, 0.8); /* Escuro mas transparente */
+  backdrop-filter: blur(20px);
+  padding: 50px;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.input-group label {
+  color: #cbd5e1;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+.input-group input {
+  width: 100%;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: white;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+.input-group input:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: rgba(34, 197, 94, 0.05);
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.1);
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 18px;
+  background: var(--primary);
+  border: none;
+  border-radius: 12px;
+  font-weight: 800;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: 0.3s;
+  box-shadow: 0 10px 30px -10px var(--primary-glow);
+}
+button[type="submit"]:hover {
+  background-color: #4ade80;
+  transform: translateY(-3px);
+}
+button[type="submit"]:disabled {
+  background-color: #334155;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+    padding: 50px 0;
+  }
+  h1 {
+    font-size: 2.5rem;
+  }
+  .chat-mockup {
+    width: 100%;
+    max-width: 350px;
+    margin-top: 30px;
+  }
+  .features .container {
+    flex-direction: column;
+  }
+  .card {
+    min-width: 100%;
+  }
+}
