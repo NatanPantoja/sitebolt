@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3000";
+const API_URL = "https://bolt-financeiro.squareweb.app/";
 
 // --- MÁSCARAS DE INPUT (UX) ---
 const phoneInput = document.getElementById("phone");
