@@ -51,7 +51,8 @@ header {
   gap: 50px;
 }
 
-h1 {
+h1,
+h2 {
   font-size: 3.5rem;
   line-height: 1.1;
   margin-bottom: 20px;
@@ -60,12 +61,19 @@ h1 {
   -webkit-text-fill-color: transparent; /* Texto Gradiente */
 }
 
+h4 {
+  font-size: 1rem;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
 p {
   color: var(--text-muted);
   font-size: 1.2rem;
   margin-bottom: 35px;
   line-height: 1.6;
   max-width: 500px;
+  text-align: left;
 }
 
 .btn-cta {
@@ -146,36 +154,74 @@ p {
   }
 }
 
-/* --- SOBRE (Cards de Vidro) --- */
-.about-section {
+/*---SEÇÃO SOBRE --- */
+.about-grid {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
+  gap: 50px;
+  padding: 80px 0;
 }
 
 .about-text {
-  padding: 80px 0;
-  text-align: center;
-  gap: 20px;
+  flex: 1;
+  text-align: left; /* Alinhado à esquerda fica mais profissional */
 }
 
 .about-text h2 {
   font-size: 2.8rem;
-  margin-bottom: 20px;
-  background: linear-gradient(to right, #fff, #94a3b8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; /* Texto Gradiente */
+  line-height: 1.2;
 }
 
-.about-image,
-img {
-  width: 50rem;
-  max-width: 40rem;
-  display: block;
-  border-radius: 10px;
+.about-image {
+  flex: 1;
 }
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 /* --- FEATURES (Cards de Vidro) --- */
+.divider {
+  padding: 60px 0;
+}
+
+.divider h2 {
+  text-align: center;
+}
+
+.image-gallery {
+  display: flex; /* Isso coloca os itens lado a lado */
+  justify-content: center; /* Centraliza as imagens */
+  gap: 20px; /* Espaço entre as duas imagens */
+  flex-wrap: wrap; /* No celular, elas vão uma para baixo da outra automaticamente */
+}
+
+.image-gallery img {
+  flex: 1; /* Faz as imagens tentarem ocupar o mesmo espaço */
+  max-width: 500px; /* Evita que fiquem gigantes em telas muito grandes */
+  width: 100%;
+  height: auto; /* Mantém a proporção da imagem */
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.image-gallery img:hover {
+  transform: scale(1.02); /* Pequeno efeito de zoom ao passar o mouse */
+}
+
+.divider-image img {
+  width: 20rem;
+  height: auto;
+  border-radius: 20px;
+}
+
 .features {
   padding: 50px 0;
 }
@@ -305,5 +351,44 @@ button[type="submit"]:disabled {
   }
   .card {
     min-width: 100%;
+  }
+
+  /* Ajustes na seção Sobre para mobile */
+  .hero-content,
+  .about-grid {
+    flex-direction: column; /* Empilha os elementos no celular */
+    text-align: center;
+    padding: 40px 0;
+  }
+
+  .about-text p {
+    margin: 0 auto 30px auto; /* Centraliza o texto no mobile */
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .about-text h2 {
+    font-size: 2rem;
+  }
+
+  .about-image {
+    order: 2; /* Coloca a imagem abaixo do texto no celular */
+    margin-top: 30px;
+  }
+
+  .chat-mockup {
+    margin: 30px auto 0 auto;
+    width: 100%;
+  }
+
+  .image-gallery {
+    flex-direction: column; /* Empilha no celular */
+    align-items: center;
+  }
+
+  .image-gallery img {
+    max-width: 100%; /* Ocupa a largura total da tela no celular */
   }
 }
