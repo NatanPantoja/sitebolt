@@ -14,10 +14,27 @@
     <section id="checkout" class="checkout-section">
       <div class="container">
         <div class="form-wrapper">
-          <h2>Assine Agora</h2>
-          <p>Apenas <strong>R$ 19,90/mês</strong>. Cancele quando quiser.</p>
+          <h2>Escolha seu Plano</h2>
 
           <form id="paymentForm">
+            <div class="plan-selector">
+              <label class="plan-card active">
+                <input type="radio" name="planType" value="monthly" checked />
+                <div class="plan-info">
+                  <span class="plan-name">Mensal</span>
+                  <span class="plan-price">R$ 29,90</span>
+                </div>
+              </label>
+
+              <label class="plan-card">
+                <input type="radio" name="planType" value="annual" />
+                <div class="plan-info">
+                  <span class="plan-name">Anual</span>
+                  <span class="plan-price">R$ 299,90</span>
+                  <span class="plan-save">2 meses grátis</span>
+                </div>
+              </label>
+            </div>
             <div class="input-group">
               <label>Nome Completo</label>
               <input type="text" id="name" placeholder="Seu nome" required />
